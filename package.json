@@ -1,0 +1,26 @@
+{
+  "name": "umi-subapp-cli",
+  "version": "1.0.0",
+  "description": "umi-subapp-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueju/umi3-sub-app-cli.git"
+  },
+  "author": "blueju",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueju/umi3-sub-app-cli/issues"
+  },
+  "homepage": "https://github.com/blueju/umi3-sub-app-cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^7.3.3",
+    "ora": "^5.1.0"
+  }
+}
