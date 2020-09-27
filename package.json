@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueju/umi3-sub-app-cli.git"
+    "url": "git+https://github.com/blueju/umi-sub-app-cli.git"
   },
   "author": "blueju",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blueju/umi3-sub-app-cli/issues"
+    "url": "https://github.com/blueju/umi-sub-app-cli/issues"
   },
-  "homepage": "https://github.com/blueju/umi3-sub-app-cli#readme",
+  "homepage": "https://github.com/blueju/umi-sub-app-cli#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^6.1.0",
