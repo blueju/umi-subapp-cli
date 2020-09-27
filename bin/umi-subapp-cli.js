@@ -1,28 +1,26 @@
 #!/usr/bin/env node
 // 表示该文件运行于node环境
 
-const path = require("path");
-//
 const program = require("commander");
-program.usage("<command>");
 
-// 传入的命令行参数
-// 例如：vue init，则传入的命令行参数就是 ["init"]
-// const args = program.parse(program.args).args;
-// console.log(args.length);
-// if (args.length === 0) {
-//   program.help();
-//   return;
-// }
+// commands
+const init = require('../commands/init.js')
+
+program
+  .version(require('../package.json').version)
+  .usage('<command> [options]')
 
 program
   // 定义一个 init 命令
-  .command("init")
-  // 定义一个配置
-  .option("-f, --foo", "enable some foo")
+  .command("init <subapp-name>")
   // 对 init 命令的描述
-  .description("初始化创建一个 umi 子应用")
-  // 别名
-  .alias("i")
+  .description("初始化一个 Umi 子应用")
   // 执行动作
-  .action(require(path.resolve(__dirname, "../commands/init")));
+  .action(init);
+
+// 传入的命令行参数
+// 例如：umi-subapp-cli init，则传入的命令行参数就是 ["init"]
+
+if (program.args.length === 0) {
+  program.help();
+}
