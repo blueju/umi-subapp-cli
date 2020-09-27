@@ -5,7 +5,6 @@ const chalk = require("chalk");
 const program = require("commander");
 const { prompt } = require("inquirer");
 const download = require("download-git-repo");
-const { log } = require("console");
 
 const args = program.parse(program.args).args;
 
@@ -30,10 +29,16 @@ const questions = [
     //     return val;
     // }
   },
+  {
+    name: 'description',
+    message: 'Project description',
+    type: 'input',
+    default: "A Umi Sub App Project"
+  }
 ];
 
 module.exports = prompt(questions).then((answers) => {
-  const { name } = answers;
+  const { name, description } = answers;
 
   const projectName = name;
   const gitUrl = "blueju/umi-subapp-template";
@@ -56,6 +61,7 @@ module.exports = prompt(questions).then((answers) => {
       }
       const packageJson = JSON.parse(data);
       packageJson.name = name;
+      packageJson.description = description;
       var updatePackageJson = JSON.stringify(packageJson, null, 2);
       fs.writeFile(
         `./${projectName}/package.json`,
@@ -64,7 +70,7 @@ module.exports = prompt(questions).then((answers) => {
         (err) => {
           if (err) {
             spinner.stop();
-            console.error(err);
+            console.log(chalk.red(err));
             return;
           } else {
             spinner.stop();
