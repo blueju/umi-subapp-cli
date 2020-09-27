@@ -69,7 +69,10 @@ module.exports = prompt(questions).then((answers) => {
           } else {
             spinner.stop();
             console.log(`
-${chalk.green("初始化创建项目成功！")}
+${chalk.green("# Project initialization finished!")}
+${chalk.white("# ========================")}
+
+${chalk.white('To get started:')}
 
 ${chalk.yellow(`cd ${name}`)}
 ${chalk.yellow("npm install")}
