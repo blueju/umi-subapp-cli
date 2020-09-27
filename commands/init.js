@@ -18,7 +18,7 @@ const questions = [
     // 回答方式
     type: "input",
     default: () => {
-      return typeof args[1] === "string" ? args[1] : "umi3-subapp";
+      return typeof args[1] === "string" ? args[1] : "umi-subapp";
     },
     // 校验
     // validate(val) {
@@ -36,7 +36,7 @@ module.exports = prompt(questions).then((answers) => {
   const { name } = answers;
 
   const projectName = name;
-  const gitUrl = "blueju/umi3-subapp-template";
+  const gitUrl = "blueju/umi-subapp-template";
 
   const spinner = ora("Downloading please wait...");
   spinner.start();
